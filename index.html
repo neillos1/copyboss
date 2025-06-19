@@ -465,7 +465,8 @@ Make it concise, conversational, and high-engagement.
 `;
 
 try {
-    const response = await fetch("http://localhost:3000/generate", {
+  fetch("https://copyboss-backend.onrender.com/generate", {
+
   method: "POST",
   headers: {
     "Content-Type": "application/json"
@@ -1141,7 +1142,8 @@ console.error("API error:", err);
   const checkoutBtn = document.getElementById("checkout-button");
   if (checkoutBtn) {
     checkoutBtn.addEventListener("click", async () => {
-      const res = await fetch("http://localhost:3000/create-checkout-session", {
+      fetch("https://copyboss-backend.onrender.com/generate", {
+
         method: "POST",
         headers: {
           "Content-Type": "application/json"
