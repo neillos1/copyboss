@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>CopyBoss 🧠 AI Tools for Content Creators</title>
+      
+     <!-- Standard ICO favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+<!-- Modern PNG fallback -->
+<link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
+
+
+
+      
+        <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+        <script src="https://cdn.tailwindcss.com"></script>
+      
+        <!-- ✅ Font Awesome Kit -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+      </head>
+      
+  <style>
+  @media (max-width: 768px) {
+    #tool {
+      min-height: 100vh !important;
+      background-position: top !important;
+      padding-bottom: 200px !important;
+    }
+  }
+</style>
+
+
+
+
+
+
+
+  <style>
+    body {
+      font-family: 'Sora', sans-serif;
+      background-color: #000;
+      color: white;
+    }
+
+    
+    html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none;
+  background: #000;
+}
+
+.hero-section {
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #000 !important;
+  background-image: url('/images/hero-section.jpg');
+
+
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
+}
+
+nav {
+  margin-bottom: 0 !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+
+
+
+
+
+    .hero-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 1;
+    }
+ 
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .glow-btn {
+      background-color: #00ffee;
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      font-weight: bold;
+      border-radius: 9999px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(0,255,255,0.5);
+    }
+
+    .glow-btn:hover {
+      background-color: #00c2b8;
+      box-shadow: 0 0 25px rgba(0,255,255,0.8);
+    }
+  
+
+ 
+ </style>
+</head>
+
+<body class="overflow-x-hidden">
+<main style="min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- Sticky Navbar -->
+<nav class="bg-black text-white fixed w-full top-0 left-0 z-50 shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+
+    <!-- Logo with Image -->
+    <div class="flex items-center text-2xl font-bold text-white">
+      CopyBoss
+      <img src="images/boss.png" alt="CopyBoss Icon" class="h-[1.6em] ml-2 mt-[2px]" />
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-6 font-semibold">
+      <a href="#tool" class="hover:text-cyan-300">Try the Tool</a>
+      <a href="#pricing" class="hover:text-cyan-300">Pricing</a>
+      <a href="#faq" class="hover:text-cyan-300">FAQ</a>
+      <a href="https://toolcoreai.com/community" target="_blank" class="hover:text-cyan-300">Community</a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="menuBtn" class="md:hidden text-white focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+<!-- Mobile Dropdown Menu -->
+<div id="mobileMenu" class="md:hidden absolute top-full left-0 w-full backdrop-blur-md bg-black/60 z-50 flex flex-col items-center space-y-3 py-4 border-b border-white">
+
+
+
+
+
+
+ <!-- ❌ Close Button -->
+<button id="closeMenu" class="absolute top-4 right-4 z-50 text-red-500 text-3xl focus:outline-none hover:text-red-400 transition shadow-md" style="text-shadow: 0 0 8px rgba(255, 0, 0, 0.7);">
+  &times;
+</button>
+
+
+
+  <a href="#tool" class="block text-cyan-300 hover:text-cyan-100 font-semibold py-2">Try the Tool</a>
+  <a href="#faq" class="block text-cyan-300 hover:text-cyan-100 font-semibold py-2">FAQ</a>
+  <a href="#pricing" class="block text-cyan-300 hover:text-cyan-100 font-semibold py-2">Pricing</a>
+  <a href="https://toolcoreai.com/community" target="_blank" class="block text-cyan-300 hover:text-cyan-100 font-semibold py-2">Community</a>
+
+</div>
+
+
+
+
+
+
+
+</nav>
+  
+  
+  <!-- Spacer -->
+  <div class="h-20"></div>
+  
+  <!-- JS to Toggle Mobile Menu -->
+  <script>
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+  
+  
+  
+
+ <!-- White Top Divider -->
+ <div style="height: 2px; background-color: white; width: 100%; margin: 0 auto;"></div>
+  
+
+
+<!-- HERO SECTION -->
+<section id="hero" class="relative bg-cover bg-center text-white" style="background-image: url('images/hero-section.jpg'); height: 48vh;">
+   
+
+  
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+  
+     <!-- Hero Content -->
+     <div class="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
+      <h1 class="text-[clamp(28px,6vw,52px)] md:text-[clamp(48px,5vw,70px)] font-extrabold leading-[1.2] md:leading-[1.3] mb-3 max-w-[90%] mx-auto text-center">
+        AI Tools Built for<br class="hidden md:block">Content Creators
+      </h1>
+      
+      
+
+
+
+
+
+
+
+
+
+      
+      
+      <p class="text-lg sm:text-xl mb-6 text-gray-200">Scripts, ideas & smart shortcuts — starting with TikTok and Twitter.</p>
+      
+      <!-- Email Opt-In Form (FormSubmit enabled) -->
+<form action="https://formsubmit.co/hello@copy-boss.com" method="POST" class="flex flex-col sm:flex-row items-center gap-3 sm:gap-2">
+  <input type="email" name="email" required placeholder="Enter your email" class="px-4 py-2 rounded-md text-black w-64 sm:w-80 focus:outline-none shadow-sm">
+  <button type="submit" class="bg-cyan-400 hover:bg-cyan-500 text-white px-5 py-2 rounded-md font-semibold shadow-md border border-white transition transform hover:scale-105">
+    Subscribe
+  </button>
+</form>
+
+      
+
+
+      <p class="mt-2 text-sm text-gray-300">Subscribe for free access & updates on new tools.</p>
+    </div>
+  </section>
+  
+  
+  
+
+ <!-- DIVIDER LINE -->
+ <div style="height: 2px; background-color: white; width: 100%; margin: 0 auto;"></div>
+ <section id="tool">
+    <!-- Your generator content -->
+   <!-- Your generator content -->
+   <section id="tool" style="display: flex; justify-content: center; padding: 100px 20px; position: relative; background: url('images/7.jpg') no-repeat center center / cover;">
+    <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6); z-index: 0;"></div>
+  
+    <div data-aos="fade-up" style="background: rgba(255,255,255,0.05); border-radius: 22px; padding: 50px 40px; max-width: 800px; width: 100%; box-shadow: 0 12px 24px rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(16px); z-index: 1; position: relative;">
+      
+      <h2 style="color: #fff; font-size: 32px; text-align: center;">Generate a Viral Script</h2>
+      <p style="color: #ccc; font-size: 16px; text-align: center; margin-top: 6px;">Create a scroll-stopping TikTok or Twitter script in seconds.</p>
+  
+      <p id="toggleInstructions" style="cursor: pointer; color: #00e0ff; text-align: center; margin-top: 14px; font-size: 15px;" onclick="toggleInstructions()">
+        ℹ️ How does this tool work? ▼
+      </p>
+  
+      <div id="instructionsBox" style="display: none; background: rgba(255,255,255,0.05); padding: 20px 25px; margin-top: 15px; margin-bottom: 30px; border-radius: 12px; color: #ccc; line-height: 1.8;" data-aos="fade-up">
+        <strong>Instructions:</strong><br><br>
+        <div>1. Enter your <strong>niche</strong> (e.g. fitness, crypto).</div>
+        <div>2. Define your <strong>audience</strong> (e.g. beginners, women over 40).</div>
+        <div>3. Write a <strong>hook</strong> (scroll-stopping first line).</div>
+        <div>4. Choose a <strong>platform</strong>.</div>
+        <div>5. Click <strong>Generate</strong> to get your viral script!</div>
+      </div>
+      
+  
+      <form onsubmit="generateScript(event)" style="margin-top: 10px; display: flex; flex-direction: column; gap: 14px;" data-aos="fade-up">
+        <input id="nicheInput" type="text" placeholder="Your niche (e.g. fitness, crypto)" 
+          style="padding: 14px; font-size: 16px; border-radius: 8px; border: none; background: #fff; color: #000;">
+  
+        <input id="audienceInput" type="text" placeholder="Your target audience (e.g. beginners, busy parents)" 
+          style="padding: 14px; font-size: 16px; border-radius: 8px; border: none; background: #fff; color: #000;">
+  
+          <input id="hookInput" type="text" placeholder="Hook line (e.g. Ask a bold question or state a problem your audience faces)" 
+          style="padding: 14px; font-size: 16px; border-radius: 8px; border: none; background: #fff; color: #000;">
+        
+  
+        <select id="platformInput" style="padding: 14px; font-size: 16px; border-radius: 8px; border: none; background: #fff; color: #000;">
+          <option selected>Select a platform</option>
+          <option>TikTok</option>
+          <option>Twitter</option>
+          <option>Instagram</option>
+          <option>YouTube Shorts</option>
+        </select>
+ <!-- 🎙️ Tone Selector -->
+<div id="styleButtons" style="margin-top: 20px; text-align: center;">
+  <p style="margin-bottom: 10px; color: #ccc;">Choose the tone of your script:</p>
+  <div style="display: inline-flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+    <button type="button" onclick="setTone('Casual')" class="style-btn">🧢 Casual</button>
+    <button type="button" onclick="setTone('Hype')" class="style-btn">⚡ Hype</button>
+    <button type="button" onclick="setTone('Savage')" class="style-btn">🔥 Savage</button>
+    <button type="button" onclick="setTone('Salesy')" class="style-btn">💰 Salesy</button>
+    <button type="button" onclick="setTone('Educational')" class="style-btn">📚 Educational</button>
+    <button type="button" onclick="setTone('Dark Humor')" class="style-btn">🕶️ Dark Humor</button>
+  </div>
+  
+</div>
+
+<script>
+  let selectedTone = '';
+  
+  function setTone(tone) {
+    selectedTone = tone;
+    console.log("🎙️ Tone set to:", selectedTone);
+  
+    const allButtons = document.querySelectorAll('.style-btn');
+    allButtons.forEach(btn => btn.classList.remove('active-tone'));
+  
+    const clickedButton = Array.from(allButtons).find(btn => btn.textContent.includes(tone));
+    if (clickedButton) clickedButton.classList.add('active-tone');
+  }
+  </script>
+<!-- ⏱️ Video Duration Selector -->
+<div id="durationButtons" style="margin-top: 20px; text-align: center;">
+  <p style="margin-bottom: 10px; color: #ccc;">Set your video duration:</p>
+  <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 12px 16px; display: inline-flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+    <button type="button" onclick="setDuration(5)" class="duration-btn">5s</button>
+    <button type="button" onclick="setDuration(10)" class="duration-btn">10s</button>
+    <button type="button" onclick="setDuration(15)" class="duration-btn">15s</button>
+    <button type="button" onclick="setDuration(30)" class="duration-btn">30s</button>
+    <button type="button" onclick="setDuration(60)" class="duration-btn">60s</button>
+    <button type="button" onclick="increaseDuration()" class="duration-btn">+10s</button>
+  </div>
+  <div id="durationDisplay" style="margin-top: 10px; color: #aaa; font-size: 14px;"></div>
+</div>
+
+
+
+
+<script>
+  let videoDuration = 0;
+  
+  function setDuration(seconds) {
+    videoDuration = seconds;
+    console.log("⏱️ Duration set to:", videoDuration + "s");
+  
+    const allButtons = document.querySelectorAll('.duration-btn');
+    allButtons.forEach(btn => btn.classList.remove('active-duration'));
+  
+    const clickedButton = Array.from(allButtons).find(btn => btn.textContent.trim() === `${seconds}s`);
+    if (clickedButton) clickedButton.classList.add('active-duration');
+  
+    updateDurationDisplay();
+  }
+  
+  function increaseDuration() {
+    videoDuration += 10;
+    console.log("⏫ Increased to:", videoDuration + "s");
+  
+    const allButtons = document.querySelectorAll('.duration-btn');
+    allButtons.forEach(btn => btn.classList.remove('active-duration'));
+  
+    updateDurationDisplay();
+  }
+  
+  function updateDurationDisplay() {
+    const display = document.getElementById("durationDisplay");
+    display.textContent = `Selected Duration: ${videoDuration}s`;
+  }
+  </script>
+  
+  
+      <button id="generateBtn" type="submit" class="bg-cyan-400 hover:bg-cyan-500 text-white px-5 py-2 rounded-md font-semibold shadow-md border border-white transition transform hover:scale-105">
+  Generate
+</button>
+
+
+
+      </form>
+  
+      
+      
+  
+      
+      
+     <!-- Hashtag Generator Button + Output Box -->
+<div class="output-wrapper" style="position: relative;">
+    <div id="outputBox"
+      style="margin-top: 40px; background: #111; border: 1px solid #444; padding: 20px; border-radius: 10px; color: #0ff; font-family: monospace; font-size: 15px;">
+      <div id="output">This is where your AI-generated script will appear...</div>
+      <i class="fas fa-copy copy-icon" onclick="copyOutput()"></i>
+    </div>
+  </div>
+  
+  <!-- Hashtag Output Box -->
+<div id="hashtagBox"
+style="display: none; margin-top: 20px; background: #111; border: 1px solid #444; padding: 20px; border-radius: 10px; color: #ccc; font-family: monospace; font-size: 14px; text-align: center; position: relative;">
+
+<!-- Hashtag text -->
+<div id="hashtagsOutput" style="padding-right: 40px;">#Hashtags will appear here...</div>
+
+<!-- Copy icon properly positioned -->
+<i class="fas fa-copy copy-icon"
+   onclick="copyHashtags()"
+   style="position: absolute; top: 10px; right: 10px; font-size: 18px; color: #00f0ff; cursor: pointer;"></i>
+</div>
+
+  
+  <!-- Generate Hashtags Button -->
+  <div style="text-align: center; margin-top: 12px;">
+    <button onclick="generateHashtags()" class="style-btn">🎯 Generate Hashtags</button>
+  </div>
+  
+  <!-- Limit Message -->
+  <div id="limitNotice" style="
+    display: none;
+    background: #8B0000;
+    color: #fff;
+    padding: 14px;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  ">
+  ⚠️ You've used your free script. To unlock unlimited access, please subscribe for just £1.99/year.
+  </div>
+  
+    </div>
+  </section>
+  <script>
+    // 🔹 Main Generator
+    async function generateScript(e) {
+e.preventDefault();
+
+const niche = document.getElementById("nicheInput").value.trim();
+const audience = document.getElementById("audienceInput").value.trim();
+const hook = document.getElementById("hookInput").value.trim();
+const platform = document.getElementById("platformInput").value;
+const output = document.getElementById("outputBox");
+const notice = document.getElementById("limitNotice");
+
+if (!niche || !audience || !hook || platform === "Select a platform") {
+output.innerHTML = "⚠️ Please complete all fields before generating a script.";
+return;
+}
+
+const hasUsed = localStorage.getItem("copybossUsed");
+if (hasUsed) {
+output.innerHTML = "";
+notice.style.display = "block";
+return;
+}
+
+localStorage.setItem("copybossUsed", "true");
+notice.style.display = "none";
+output.classList.add("glow");
+output.innerHTML = "";
+
+const prompt = `
+Write a short viral script for a ${platform} video.
+Niche: ${niche}
+Target Audience: ${audience}
+Hook: ${hook}
+Structure it like this:
+🔥 Hook line
+💡 Insightful body line
+📢 Call to Action
+Make it concise, conversational, and high-engagement.
+`;
+
+try {
+    const response = await fetch("http://localhost:3000/generate", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({ prompt })
+});
+
+
+
+const data = await response.json();
+
+if (!data.choices || !data.choices[0]) {
+  output.innerHTML = "⚠️ Failed to get response. Try again.";
+  return;
+}
+
+const text = data.choices[0].message.content;
+let i = 0;
+output.innerHTML = "";
+
+const typing = setInterval(() => {
+  output.innerHTML += text.charAt(i);
+  i++;
+  if (i >= text.length) clearInterval(typing);
+}, 25);
+
+document.getElementById("styleButtons").style.display = "block";
+document.getElementById("hashtagBox").style.display = "block";
+
+setTimeout(() => {
+  output.classList.remove("glow");
+}, 6000);
+} catch (err) {
+output.innerHTML = "Something went wrong. Try again later.";
+console.error("API error:", err);
+}
+}
+
+  
+    // 🔹 Toggle Instructions
+    function toggleInstructions() {
+      const box = document.getElementById("instructionsBox");
+      box.style.display = box.style.display === "none" ? "block" : "none";
+    }
+  
+  </script>
+
+  
+  <script>
+    function generateHashtags() {
+      const niche = document.getElementById("nicheInput").value.trim().toLowerCase();
+      const platform = document.getElementById("platformInput").value;
+      const output = document.getElementById("hashtagsOutput");
+  
+      if (!niche || platform === "Select a platform") {
+        output.innerHTML = "⚠️ Please enter a niche and select a platform first.";
+        return;
+      }
+  
+      const hashtags = {
+        fitness: [
+          "#GymMotivation", "#BodybuildingJourney", "#FitTok", "#MindMuscleConnection",
+          "#NoExcuses", "#NaturalGains", "#WorkoutMindset", "#DailyGrind", "#ForYouPage", "#FitnessGoals"
+        ],
+        crypto: [
+          "#CryptoNews", "#DeFi", "#BitcoinTalk", "#CryptoTips", "#AltcoinGems",
+          "#CryptoCommunity", "#Web3Life", "#BlockchainBuzz", "#ForYouPage", "#SideHustle"
+        ],
+        ai: [
+          "#AITools", "#FutureOfWork", "#AIAutomation", "#TechTok", "#BuildWithAI",
+          "#ProductivityHacks", "#AIforBusiness", "#PromptEngineering", "#ForYou", "#SmartTools"
+        ],
+        selfhelp: [
+          "#SelfImprovement", "#MotivationDaily", "#GrowthMindset", "#DisciplineOverMotivation",
+          "#BetterEveryDay", "#NoExcuses", "#LevelUp", "#SuccessTips", "#FYP", "#DailyGrind"
+        ]
+      };
+  
+      const list = hashtags[niche] || [
+        "#Tips", "#Motivation", "#DailyInspo", "#LifeHacks", "#SuccessMindset", "#TrendingNow", "#ForYouPage"
+      ];
+  
+      const selected = list.slice(0, 10).join(" ");
+      output.innerHTML = selected;
+  
+      output.style.opacity = "0";
+      setTimeout(() => {
+        output.style.opacity = "1";
+      }, 50);
+  
+      // ✅ Show hashtag output box
+      document.getElementById("hashtagBox").style.display = "block";
+    }
+  </script>
+  
+  
+  <script>
+    function copyHashtags() {
+      const text = document.getElementById("hashtagsOutput").innerText;
+      navigator.clipboard.writeText(text)
+        .then(() => alert("✅ Hashtags copied to clipboard!"))
+        .catch(() => alert("❌ Copy failed!"));
+    }
+  </script>
+  
+  
+      
+      
+  
+  
+  
+<section id="faq" class="faq-bg" style="padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/4.jpg') no-repeat center center / cover; color: #fff;">
+
+    <div style="max-width: 850px; margin: auto;">
+  
+      <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px;">
+        ❓ Frequently Asked Questions
+      </h2>
+  
+      <div class="faq-container">
+
+
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="text">Is this really free?</span>
+            <span class="toggle">▼</span>
+
+
+
+
+           
+
+
+
+
+          </button>
+          <div class="faq-answer">Yes — you get one free script, no signup needed. After that, a tiny subscription unlocks unlimited use.</div>
+        </div>
+      
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="text">What platforms does this work for?</span>
+            <span class="toggle">▼</span>
+
+
+          </button>
+          <div class="faq-answer">Right now, TikTok and Twitter. We’ll be adding support for Reels, Shorts, blogs and more.</div>
+        </div>
+      
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="text">Why is CopyBoss so cheap?</span>
+            <span class="toggle">▼</span>
+          </button>
+          <div class="faq-answer">
+            Because we’re creators too. We built CopyBoss to solve our own problem — getting fast, high-quality content without expensive subscriptions. That’s why we’ve kept the price low and the value high.
+          </div>
+        </div>
+        
+      
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="text">Can I suggest a new feature?</span>
+            <span class="toggle">▼</span>
+
+
+          </button>
+          <div class="faq-answer">Absolutely. Head to the <a href="/community" style="color: #00e0ff;">Community Hub</a> and post your idea!</div>
+        </div>
+      
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="text">Is it really just £1.99/year?</span>
+            <span class="toggle">▼</span>
+
+
+          </button>
+          <div class="faq-answer">Yep — we’re creators too. That’s why we kept it super affordable.</div>
+        </div>
+      
+      </div>
+      
+    </div>
+  </section>
+  <!-- COMMUNITY HUB SECTION -->
+<section id="community" style="padding: 100px 20px 200px; background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('images/10.jpg') no-repeat center center / cover; color: white;">
+  <div style="max-width: 850px; margin: auto; text-align: center;">
+
+    <h2 style="font-size: 36px; margin-bottom: 20px;">🌐 Join the Community Hub</h2>
+    <p style="font-size: 18px; max-width: 700px; margin: auto; margin-bottom: 40px;">
+      Chat, learn, and grow with other creators. Share ideas, get feedback, and request new features — all in one place.
+    </p>
+
+    <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 40px; border-radius: 16px; backdrop-filter: blur(12px); box-shadow: 0 8px 20px rgba(0,0,0,0.35); max-width: 420px; margin: auto; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+      <h3 style="font-size: 24px; margin-bottom: 10px;">💬 Real Conversations</h3>
+      <p style="color: #ccc; font-size: 15px; margin-bottom: 25px;">
+        Connect with creators like you. Share tips, wins, and feature ideas.
+      </p>
+      <a href="https://toolcoreai.com/community">
+        <button class="bg-cyan-400 hover:bg-cyan-500 text-white px-5 py-2 rounded-md font-semibold shadow-md border border-white transition transform hover:scale-105">
+          🚀 Enter the Community Hub
+        </button>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+  
+<style>
+    .style-btn {
+      margin: 6px;
+      padding: 10px 16px;
+      background: #111;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+  
+    .style-btn:hover {
+      background: #00e0ff;
+      color: #000;
+    }
+  </style>
+  
+  
+  
+   <!-- PRICING SECTION -->
+<section style="padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('images/10.jpg') no-repeat center center / cover; transform: rotate(180deg);">
+  <div style="transform: rotate(180deg); max-width: 850px; margin: auto; text-align: center; color: #fff;">
+
+    <h2 style="font-size: 32px; margin-bottom: 16px;">🎯 Simple, Transparent Pricing</h2>
+    <p style="color: #ccc; font-size: 17px; margin-bottom: 30px;">
+      For a limited time, get full access for just <strong>£1.99/year</strong> — price increases to £5.99 soon!
+    </p>
+
+    <!-- PRICING CARD -->
+    <div id="pricing" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 40px; border-radius: 16px; backdrop-filter: blur(12px); box-shadow: 0 8px 20px rgba(0,0,0,0.35); transition: transform 0.3s ease, box-shadow 0.3s ease; max-width: 420px; margin: auto;">
+
+      <!-- 🔥 Deal Badge -->
+      <div style="font-size: 14px; font-weight: 600; color: #00e0ff; margin-bottom: 12px;">
+        🔥 Early Access Deal
+      </div>
+
+      <h3 style="font-size: 28px; margin-bottom: 8px;">Unlimited Scripts</h3>
+      <p style="color: #ccc; font-size: 15px;">Access every tool, anytime. No hidden fees.</p>
+
+      <div style="font-size: 36px; font-weight: bold; margin: 25px 0; color: #00e0ff;">
+        £1.99<span style="font-size: 18px; font-weight: 400;">/year</span>
+      </div>
+
+      <!-- Stripe Button -->
+      <button id="checkout-button" class="bg-cyan-400 hover:bg-cyan-500 text-white px-5 py-2 rounded-md font-semibold shadow-md border border-white transition">
+        🔓 Unlock Unlimited Access (£1.99/year)
+      </button>
+
+      <p style="font-size: 14px; margin-top: 12px; color: #888;">Lock in your rate before prices go up.</p>
+    </div>
+
+  </div>
+</section>
+
+  
+  
+
+<!-- FOOTER -->
+</main>
+
+<!-- Scroll to Top Bar -->
+<div class="text-center py-6 bg-[#111] border-t border-[#222]">
+  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" class="bg-cyan-400 hover:bg-cyan-500 text-white px-5 py-2 rounded-md font-semibold shadow-md border border-white transition">
+  ↑ Scroll to Top
+</button>
+
+
+
+</div>
+
+<!-- Footer -->
+<footer class="bg-[#111] text-center text-sm text-[#ccc] pt-8 pb-12">
+
+  <div class="max-w-[1000px] mx-auto">
+
+    <!-- TikTok Only -->
+    <div class="mb-5">
+      <a href="https://www.tiktok.com/@copybosshq?lang=en-GB" target="_blank" class="text-[#ccc] text-lg hover:text-cyan-400 transition">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div>
+
+    <!-- Footer Links with Dividers -->
+    <div class="mb-2 space-x-2 text-sm">
+      <a href="privacy.html" class="hover:text-white transition">Privacy</a>
+      <span class="text-[#555]">|</span>
+      <a href="terms.html" class="hover:text-white transition">Terms</a>
+      <span class="text-[#555]">|</span>
+      <a href="support.html" class="hover:text-white transition">Support</a>
+    </div>
+
+    <!-- Copyright -->
+    <p class="text-[#777] mt-3">© 2025 <strong>CopyBoss</strong>. All rights reserved.</p>
+
+  </div>
+</footer>
+
+
+
+
+ 
+
+
+
+  
+  
+  
+  
+
+
+  <style>
+   
+   .price-btn {
+  background: #00e0ff;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 26px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: none;
+  box-shadow: none;
+}
+
+.price-btn:hover {
+  animation: pulseBtn 1.5s infinite;
+}
+
+@keyframes pulseBtn {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(0, 224, 255, 0);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
+    transform: scale(1.04);
+  }
+}
+.pricing-card {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 420px;
+  margin: auto;
+  box-shadow: 0 0 18px rgba(0, 224, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(0, 224, 255, 0.2);
+}
+
+
+   
+   .faq-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .faq-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+  
+    .faq-question {
+  background: none;
+  border: none;
+  padding: 20px 24px;
+  color: #00e0ff;
+  font-size: 20px;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question .arrow {
+  transition: transform 0.3s ease;
+  font-size: 18px;
+}
+
+.faq-item.open .faq-question .arrow {
+  transform: rotate(180deg); /* Flips the arrow up */
+}
+
+.faq-answer {
+  display: none;
+  color: #ccc;
+  padding: 20px 24px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+.toggle {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 18px;
+  color: #00e0ff;
+  margin-left: auto;
+}
+
+.faq-item.open .toggle {
+  transform: rotate(180deg);
+}
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 224, 255, 0.5);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 14px rgba(0, 224, 255, 0.8);
+  }
+}
+@keyframes pulseBtn {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(0, 224, 255, 0.0);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(0, 224, 255, 0.6);
+    transform: scale(1.04);
+  }
+}
+/* Small glow animation for output box */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 8px #00e0ff40, 0 0 16px #00e0ff20;
+  }
+  50% {
+    box-shadow: 0 0 14px #00e0ff80, 0 0 22px #00e0ff40;
+  }
+}
+
+#outputBox.glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Typewriter effect */
+.typewriter span {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid #00e0ff;
+  white-space: nowrap;
+  animation: typing 2.5s steps(50, end), blink .75s step-end infinite;
+  font-family: monospace;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+.copy-icon {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  color: #00f0ff;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+  .output-wrapper {
+    position: relative;
+  }
+  
+.copy-icon:hover {
+  transform: scale(1.2);
+  color: #fff;
+}
+
+.duration-btn,
+.style-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 8px 16px;
+  border-radius: 12px;
+  color: #ccc;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.duration-btn:hover,
+.style-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.active-tone {
+  background-color: #00e0ff;
+  color: white;
+  border: 1px solid #00e0ff;
+}
+
+.active-duration {
+  background-color: #ff00cc;
+  color: white;
+  border: 1px solid #ff00cc;
+}
+
+
+
+
+
+  </style>
+  
+  <style>
+  @media (max-width: 768px) {
+    .faq-bg {
+      padding-bottom: 210px !important;
+      background-size: 100% 100%;
+    }
+  }
+</style>
+
+
+<style>
+  @media (max-width: 768px) {
+    section[style*="10.jpg"] {
+      transform: none !important;
+    }
+
+    section[style*="10.jpg"] > div {
+      transform: none !important;
+    }
+
+    section[style*="10.jpg"] {
+      background-position: center 60% !important;
+    }
+  }
+</style>
+
+
+
+
+
+
+  
+  
+  
+  <script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+<script>
+    function copyHashtags() {
+      const text = document.getElementById("hashtagsOutput").innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("✅ Hashtags copied to clipboard!");
+      }).catch(err => {
+        alert("❌ Copy failed.");
+        console.error(err);
+      });
+    }
+  </script>
+  
+  <script>
+    function toggleInstructions() {
+      const box = document.getElementById('instructionsBox');
+      const toggleText = document.getElementById('toggleInstructions');
+  
+      const isOpen = box.style.display === 'block';
+      box.style.display = isOpen ? 'none' : 'block';
+      toggleText.innerHTML = isOpen
+        ? 'ℹ️ How does this tool work? ▼'
+        : 'ℹ️ Hide Instructions ▲';
+    }
+  </script>
+  
+ <!-- 🧠 Cleaned Mobile Menu Logic -->
+<style>
+  #mobileMenu {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #mobileMenu.active {
+    transform: translateY(0%);
+    opacity: 1;
+    pointer-events: auto;
+  }
+</style>
+
+<script>
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuBtn = document.getElementById('menuBtn');
+  const closeBtn = document.getElementById('closeMenu');
+
+  // Open menu
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('active');
+  });
+
+  // Close menu
+  closeBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+  });
+
+  // Close menu on scroll (down)
+  let lastScrollTop = 0;
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop && mobileMenu.classList.contains('active')) {
+      mobileMenu.classList.remove('active');
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+</script>
+
+
+
+
+  
+  
+<!-- Stripe JS -->
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  const stripe = Stripe(""); // temporarily empty, we’ll secure it properly after
+
+
+  const checkoutBtn = document.getElementById("checkout-button");
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener("click", async () => {
+      const res = await fetch("http://localhost:3000/create-checkout-session", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+
+      const data = await res.json();
+      if (data.sessionId) {
+        stripe.redirectToCheckout({ sessionId: data.sessionId });
+      } else {
+        alert("❌ Failed to create checkout session.");
+      }
+    });
+  }
+</script>
+
+<!-- Other scripts above here -->
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+  
